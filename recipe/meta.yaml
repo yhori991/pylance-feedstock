@@ -23,7 +23,6 @@ requirements:
     - python
     - pip
     - maturin
-    - xz  # [linux-64]
   run:
     - python
     - numpy >=1.22
