@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 set -ex
+set RUSTUP_TOOLCHAIN=""
+
 # Bundle all downstream library licenses
 cd python
 cargo-bundle-licenses \
