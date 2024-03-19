@@ -1,4 +1,3 @@
-set RUSTUP_TOOLCHAIN=""
 REM Create temp folder
 mkdir tmpbuild_%PY_VER%
 set TEMP=%CD%\tmpbuild_%PY_VER%
