@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 set -ex
-export RUSTUP_TOOLCHAIN=""
 
 # Bundle all downstream library licenses
 cd python
