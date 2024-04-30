@@ -21,11 +21,11 @@ requirements:
     - cargo-bundle-licenses
     - libprotobuf
   host:
-    - python
+    - python >=3.9
     - pip
     - maturin
   run:
-    - python
+    - python >=3.9
     - numpy >=1.22
     - pyarrow >=12,<15.0.1
 
