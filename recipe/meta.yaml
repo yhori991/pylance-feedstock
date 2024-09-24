@@ -7,10 +7,10 @@ package:
 
 source:
   url: https://github.com/lancedb/lance/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: 3faf0b3b5c44e0bc4d9275e36b068e24d9b5c8ffa073bbf514488838af6677fb
+  sha256: b57fd6f8f2da85b2ee74dd848c5e025820aa00b56e1f98f7e4fecfda504bdec3
 
 build:
-  number: 0
+  number: 1
   skip: true  # [py<39]
 
 requirements:
