@@ -12,3 +12,5 @@ cxx_compiler:
   - clangxx
 cxx_compiler_version:
   - 18
+c_stdlib_version:       # [osx]
+  - '10.14'             # [osx]
