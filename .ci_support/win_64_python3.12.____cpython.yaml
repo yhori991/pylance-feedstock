@@ -1,5 +1,7 @@
 c_compiler:
-- vs2019
+- clang
+c_compiler_version:
+- '18'
 c_stdlib:
 - vs
 channel_sources:
@@ -7,7 +9,7 @@ channel_sources:
 channel_targets:
 - conda-forge main
 libprotobuf:
-- 4.25.3
+- 5.27.5
 pin_run_as_build:
   python:
     min_pin: x.x
@@ -17,6 +19,6 @@ python:
 rust_compiler:
 - rust
 rust_compiler_version:
-- 1.78.0
+- 1.83.0
 target_platform:
 - win-64
