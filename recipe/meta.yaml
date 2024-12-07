@@ -30,7 +30,7 @@ requirements:
   run:
     - python
     - numpy >=1.22
-    - pyarrow >=12,<15.0.1
+    - pyarrow >=14,<15.0.1
 
 test:
   imports:
