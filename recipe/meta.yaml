@@ -10,14 +10,14 @@ source:
   sha256: 8ba83687e1ad28e7434edb1bb1b485990c2082299610dc886504b618c6784526
 
 build:
-  number: 0
+  number: 1
   skip: true  # [py<39]
 
 requirements:
   build:
     - python                                 # [build_platform != target_platform]
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
-    - maturin                                # [build_platform != target_platform]
+    - maturin <1.8.0                         # [build_platform != target_platform]
     - {{ compiler('c') }}
     - {{ stdlib("c") }}
     - {{ compiler('rust') }}
@@ -26,7 +26,7 @@ requirements:
   host:
     - python
     - pip
-    - maturin
+    - maturin <1.8.0
   run:
     - python
     - numpy >=1.22
