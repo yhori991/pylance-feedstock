@@ -27,6 +27,7 @@ requirements:
     - python
     - pip
     - maturin <1.8.0
+    - openssl
   run:
     - python
     - numpy >=1.22
