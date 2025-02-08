@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 set -ex
+export OPENSSL_DIR=$PREFIX
 
 # Bundle all downstream library licenses
 cd python
