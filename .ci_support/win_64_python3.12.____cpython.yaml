@@ -9,7 +9,7 @@ channel_sources:
 channel_targets:
 - conda-forge main
 libprotobuf:
-- 5.28.3
+- 5.29.3
 openssl:
 - '3'
 pin_run_as_build:
