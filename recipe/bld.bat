@@ -8,17 +8,5 @@ cargo-bundle-licenses ^
     --format yaml ^
     --output %SRC_DIR%\THIRDPARTY.yml ^
     || goto :error
-REM Use PEP517 to install the package
-maturin build ^
-    --release ^
-    --strip ^
-    --manylinux off ^
-    --interpreter=%PYTHON%
-REM Install wheel
-cd target/wheels
-REM set UTF-8 mode by default
-chcp 65001
-set PYTHONUTF8=1
-set PYTHONIOENCODING="UTF-8"
-set TMPDIR=tmpbuild_%PY_VER%
-FOR %%w in (*.whl) DO %PYTHON% -m pip install %%w --no-clean
+REM install the package
+%PYTHON% -m pip install . -vv
