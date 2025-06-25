@@ -2,11 +2,11 @@
 set -ex
 export OPENSSL_DIR=$PREFIX
 
-# Bundle all downstream library licenses
+# Install package
 cd python
+${PYTHON} -m pip install . -vv
+
+# Bundle all downstream library licenses
 cargo-bundle-licenses \
   --format yaml \
-  --output ${SRC_DIR}/THIRDPARTY.yml
-
-# Install package
-${PYTHON} -m pip install . -vv
+  --output ../THIRDPARTY.yml
