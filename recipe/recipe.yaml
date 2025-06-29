@@ -13,6 +13,16 @@ source:
 
 build:
   number: ${{ build_number }}
+  script:
+    - if: unix
+      then:
+        - export OPENSSL_DIR=${{ PREFIX }}
+    - if: win
+      then:
+        - set OPENSSL_DIR=${{ PREFIX }}
+    - cd python
+    - cargo-bundle-licenses --format yaml --output ../THIRDPARTY.yml
+    - ${{ PYTHON }} -m pip install . -vv
 
 requirements:
   build:
