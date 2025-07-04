@@ -1,0 +1,55 @@
+{% set name = "pylance" %}
+{% set version = "0.31.0" %}
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+source:
+  url: https://github.com/lancedb/lance/archive/refs/tags/v{{ version }}.tar.gz
+  sha256: 9d77f37ae2dce1ef8efae996aa35272a95d89531994378d5d143999b20b301f5
+
+build:
+  number: 0
+  skip: true  # [py<39]
+
+requirements:
+  build:
+    - python                                 # [build_platform != target_platform]
+    - cross-python_{{ target_platform }}     # [build_platform != target_platform]
+    - maturin <1.8.0                         # [build_platform != target_platform]
+    - {{ compiler('c') }}
+    - {{ stdlib("c") }}
+    - {{ compiler('rust') }}
+    - cargo-bundle-licenses
+    - libprotobuf
+  host:
+    - python
+    - pip
+    - maturin <1.8.0
+    - openssl
+  run:
+    - python
+    - numpy >=1.22
+    - pyarrow >=14
+
+test:
+  imports:
+    - lance
+  commands:
+    - pip check
+  requires:
+    - pip
+
+about:
+  home: https://github.com/lancedb/lance
+  summary: python wrapper for Lance columnar format
+  license: Apache-2.0
+  license_file:
+    - LICENSE
+    - python/LICENSE
+    - THIRDPARTY.yml
+
+extra:
+  recipe-maintainers:
+    - yhori991
